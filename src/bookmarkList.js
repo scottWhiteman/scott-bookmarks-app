@@ -1,5 +1,0 @@
-const bookmarks = [];
-
-export default {
-
-};

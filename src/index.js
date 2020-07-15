@@ -1,31 +1,8 @@
-// const store = {
-//     bookmarks: [
-//       {
-//         id: 'x56w',
-//         title: 'Title 1',
-//         rating: 3,
-//         url: 'http://www.title1.com',
-//         description: 'lorem ipsum dolor sit',
-//         expanded: false
-//       },
-//       {
-//         id: '6ffw',
-//         title: 'Title 2',
-//         rating: 5,
-//         url: 'http://www.title2.com',
-//         description: 'dolorum tempore deserunt',
-//         expanded: false
-//       } 
-//     ],
-//     adding: false,
-//     error: null,
-//     filter: 0
-//   };
 import $ from 'jquery';
 import './style.css';
 
 import api from './api';
-import bookmarkList from './bookmarkList';
+import bookmarkStore from './bookmarkStore';
 import bookmarkApp from './bookmarkApp';
 
 
@@ -50,19 +27,11 @@ import bookmarkApp from './bookmarkApp';
 // }
 
 const main = () => {
-  // api.createBookmark("Event Hubs", "https://www.wikipedia.org", "The One and Only online wikipedia", 5)
-  //   .then(res => res.json())
-  //   .then((newBookmark) => {
-  //     return api.getBookmarks();
-  //   })
-  //   .then(res => res.json())
-  //   .then((bookmarks) => {
-  //     console.log(bookmarks);
-  //   });
-
   api.getBookmarks()
-    .then(res => res.json())
-    .then(res => console.log(res));
+    .then((bookmarks) => {
+      bookmarks.forEach((bookmark) => bookmarkStore.addBookmark(bookmark));
+      bookmarkApp.render();
+    });
   bookmarkApp.bindEventListeners();
   bookmarkApp.render();
 };

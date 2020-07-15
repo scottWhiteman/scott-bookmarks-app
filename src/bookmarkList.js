@@ -1,0 +1,5 @@
+const bookmarks = [];
+
+export default {
+
+};

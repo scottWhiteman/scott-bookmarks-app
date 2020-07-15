@@ -50,10 +50,20 @@ import bookmarkApp from './bookmarkApp';
 // }
 
 const main = () => {
-  // api.getBookmarks()
+  // api.createBookmark("Event Hubs", "https://www.wikipedia.org", "The One and Only online wikipedia", 5)
   //   .then(res => res.json())
-  //   .then(res => console.log(res));
-  // bookmarkApp.bindEventListers();
+  //   .then((newBookmark) => {
+  //     return api.getBookmarks();
+  //   })
+  //   .then(res => res.json())
+  //   .then((bookmarks) => {
+  //     console.log(bookmarks);
+  //   });
+
+  api.getBookmarks()
+    .then(res => res.json())
+    .then(res => console.log(res));
+  bookmarkApp.bindEventListeners();
   bookmarkApp.render();
 };
 

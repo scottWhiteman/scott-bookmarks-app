@@ -18,8 +18,17 @@ const generateBookmarkRow = (bookmark) => {
   return `<button class="bookmark-row">
     <div class="bookmark-title"><span>${bookmark.title}</span></div>
     <div class="drop-arrow"><i class="arrow down"></i></div>
-    <div class="rating">${bookmark.rating}</div>
+    ${generateRating(bookmark.rating)}
   </button>`
+}
+const generateRating = (rating) => {
+  return `<div class="rating">
+    <div class="star-fill"></div>
+    <div class="star-fill"></div>
+    <div class="star-fill"></div>
+    <div class="star-empty"></div>
+    <div class="star-empty"></div>
+    </div>`
 }
 const generateBookmarkDescription = (bookmark) => {
   return `<div class="description-container hidden">
@@ -31,10 +40,12 @@ const generateBookmarkDescription = (bookmark) => {
 const dropBookmarkDetail = (bookmarkRow) => {
   const bookmarkDescrip = $(bookmarkRow).siblings('.description-container');
   if (bookmarkDescrip.hasClass('hidden')) {
+    //$('.description-container').attr('class', 'description-container hidden');
     bookmarkDescrip.attr('class', 'description-container');
     const bookmarkRow = bookmarkDescrip.siblings('.bookmark-row');
     $(bookmarkRow).find('.drop-arrow .arrow').attr('class', 'arrow up');
   } else {
+    //$('.description-container').attr('class', 'description-container hidden');
     bookmarkDescrip.attr('class', 'description-container hidden');
     $(bookmarkRow).find('.drop-arrow .arrow').attr('class', 'arrow down');
   }

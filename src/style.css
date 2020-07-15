@@ -31,6 +31,30 @@ body {
     justify-content: center;
 }
 
+#new-bookmark-container {
+    margin: 30px 30px;
+    padding: 10px;
+    background-color: #ff9;
+    border: 3px dashed black;
+    text-align: center;
+}
+#new-bookmark-form {
+
+}
+.bookmark-url-container {
+    padding: 5px;
+}
+.bookmark-url-container input[type="text"] {
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+}
+.description-text {
+    margin: 10px 0;
+    padding: auto;
+    background-color: white;
+}
+
 .buttons-container button {
     margin: 3px 5px;
     padding: 5px 10px;
@@ -76,9 +100,24 @@ body {
 .bookmark-row .rating {
     background-color: #2af;
     color: #fff;
-    padding: 10px 30px;
+    padding: 5px 5px;
     float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     /* flex: 1; */
+}
+.bookmark-row .rating .star-fill {
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    min-height: 25px;
+    min-width: 25px;
+}
+.bookmark-row .rating .star-empty {
+    background-color: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    min-height: 25px;
+    min-width: 25px;
 }
 
 .description-container {
@@ -118,6 +157,8 @@ body {
 .down {
     transform: rotate(45deg);
 }
+
+
 
 .hidden {
     display: none;

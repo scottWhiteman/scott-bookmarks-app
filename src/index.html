@@ -9,12 +9,25 @@
 <body>
     <header class="header">
         <h1 class="title">Bookmarks App</h1>
+        <div class="star-fill"></div>
         <div class="buttons-container">
             <button id="new-bookmark-button">New Bookmark</button>
             <button id="filter-button">Filter</button>
         </div>
     </header>
-    
+    <section id="new-bookmark-container">
+        <form id="new-bookmark-form">
+            <div class='bookmark-url-container'>
+                <label>New Bookmark Name:</label><br/>
+                <input type="text" name="title" placeholder="https://www.somewebsite.com"><br/>
+            </div>
+            <textarea class="description-text" rows="8" cols="30" name="description" form="new-bookmark-form" placeholder="Enter description here..."></textarea>
+            <div class="buttons-container">
+                <button type="button" class="form-button cancel">Cancel</button>
+                <button type="submit" class="form-button">Create</button>
+            </div>
+        </form>
+    </section>
     <section id="bookmark-list-container">
         <ul id="bookmark-list">
             <!-- <li class="bookmark-item">

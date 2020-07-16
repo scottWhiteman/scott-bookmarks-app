@@ -108,7 +108,7 @@ body {
     /* flex: 1; */
 }
 .bookmark-row .rating .star-fill {
-    background-color: yellow;
+    background-color: #0ff;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     min-height: 25px;
     min-width: 25px;
@@ -123,7 +123,7 @@ body {
 .description-container {
     padding: 0;
     margin: 0;
-    background-color: #bee;
+    background-color: #ff9;
     border-top: 2px solid black;
 }
 .description-container .site-link {
@@ -137,6 +137,30 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out; */
 }
+.description-container button {
+    margin: 10px 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+.description-container .edit {
+    background-color: #05f;
+    color: #fff;
+    border-radius: 3em 0 0 3em;
+    outline-style: none;
+}
+.description-container .edit:hover {
+    background-color: #028;
+}
+.description-container .delete {
+    background-color: #f88;
+    border-radius: 4em;
+    font-size: 12px;
+    outline-style: none;
+}
+.description-container .delete:hover {
+    background-color: #f33;
+}
+
 .drop-arrow {
     padding: 0;
     margin: 0;
@@ -157,8 +181,6 @@ body {
 .down {
     transform: rotate(45deg);
 }
-
-
 
 .hidden {
     display: none;

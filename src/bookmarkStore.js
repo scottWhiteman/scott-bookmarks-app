@@ -21,5 +21,6 @@ const deleteBookmark = function(id) {
 export default {
     appData,
     getById,
-    addBookmark
+    addBookmark,
+    deleteBookmark
 };

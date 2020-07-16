@@ -1,9 +1,25 @@
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/scott/bookmarks'
 
 const getFetch = (...args) => {
+    let error;
     return fetch(...args)
-        .then(res => res.json())
-        .then(bookmarkData => bookmarkData);
+        .then(res => {
+            if (!res.ok) {
+                error = {code: res.status};
+                if (!res.headers.get('content-type').includes('json')) {
+                    error.message = res.statusText;
+                    return Promise.reject(error);
+                }
+            }
+            return res.json();
+        })
+        .then(bookmarkData => {
+            if (error) {
+                error.message = bookmarkData.message;
+                return Promise.reject(error);
+            }
+            return bookmarkData;
+        });
 }
 
 const getBookmarks = () => {
@@ -26,7 +42,12 @@ const createBookmark = (title, url, desc, rating) => {
     });
 }
 
+const deleteBookmark = (id) => {
+    return getFetch(`${BASE_URL}/${id}`, {method: "DELETE"} );
+}
+
 export default {
     getBookmarks,
-    createBookmark
+    createBookmark,
+    deleteBookmark
 };

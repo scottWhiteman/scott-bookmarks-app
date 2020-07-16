@@ -18,9 +18,14 @@ const deleteBookmark = function(id) {
     this.appData.bookmarkList.splice(deleteIndex, 1);
 }
 
+const setError = function(msg) {
+    this.appData.error = msg;
+}
+
 export default {
     appData,
     getById,
     addBookmark,
-    deleteBookmark
+    deleteBookmark,
+    setError
 };

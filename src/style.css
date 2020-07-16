@@ -30,6 +30,33 @@ body {
     flex-direction: row;
     justify-content: center;
 }
+.header .error-container {
+    margin: auto 20px;
+}
+.header .error {
+    background-color: #faa;
+    border: 2px solid #f55;
+    padding: 5px;
+    margin: 10px 0;
+    color: #600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.header .error p {
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    background-color: #fcc;
+    border: 1px dashed #c00;
+}
+.header .error .error-close {
+    background-color: #f00;
+    padding: 2px 8px;
+    font-size: 20px;
+    border-radius: 25%;
+    height: 100%;
+}
 
 #new-bookmark-container {
     margin: 30px 30px;
@@ -41,13 +68,20 @@ body {
 #new-bookmark-form {
 
 }
+#new-bookmark-description {
+    width: 80%;
+}
 .bookmark-url-container {
     padding: 5px;
 }
+.bookmark-url-container label {
+    font-size: 20px;
+}
 .bookmark-url-container input[type="text"] {
-    width: 300px;
+    width: 80%;
     height: 30px;
     font-size: 20px;
+    margin: 5px 0;
 }
 .description-text {
     margin: 10px 0;
@@ -62,8 +96,8 @@ body {
 
 #bookmark-list-container {
     text-align: center;
-    margin: 5px 0;
-    border: 2px solid black;
+    margin: 5px 15px;
+    border: 2px solid #37a;
     background-color: #fff;
 }
 
@@ -88,19 +122,26 @@ body {
 .bookmark-row:hover {
     background-color: #aaa;
 }
+.bookmark-row:hover .rating {
+    background-color: #05f;
+}
 .bookmark-row:active {
     background-color: #fff;
+}
+.bookmark-row:active .rating {
+    background-color: #2af;
 }
 
 .bookmark-row .bookmark-title {
     padding: 10px 0;
     display: inline-block;
+    font-size: 20px;
     /* flex: 2; */
 }
 .bookmark-row .rating {
     background-color: #2af;
     color: #fff;
-    padding: 5px 5px;
+    padding: 10px 5px;
     float: right;
     display: flex;
     flex-direction: row;

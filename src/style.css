@@ -5,11 +5,13 @@
 
 body {
     height: 100%;
+    margin: auto;
     padding: 15px;
     background-color: #adf;
     background-image: linear-gradient(to bottom right, #ddf, #adf);
     background-repeat: none;
     background-attachment: fixed;
+    max-width: 600px;
 }
 
 .header {
@@ -65,11 +67,9 @@ body {
     border: 3px dashed black;
     text-align: center;
 }
-#new-bookmark-form {
-
-}
 #new-bookmark-description {
     width: 80%;
+    font-size: 20px;
 }
 .bookmark-url-container {
     padding: 5px;
@@ -169,11 +169,26 @@ body {
 }
 .description-container .site-link {
     margin: 10px 0;
+    font-size: 40px;
+    background-color: #05f;
+    color: #fff;
+    border: 3px solid #000;
+    border-radius: 0.5em;
+    outline-style: none;
+}
+.description-container .site-link:hover {
+    background-color: #7df;
+    color: #000;
+}
+.description-container .site-link:active {
+    background-color: #05f;
+    color: #fff;
 }
 .description-container .description {
     margin: 0;
     padding: 10px 5px;
     border-top: 2px solid black;
+    font-size: 20px;
     /* max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out; */
@@ -184,13 +199,13 @@ body {
     font-size: 20px;
 }
 .description-container .edit {
-    background-color: #05f;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     border-radius: 3em 0 0 3em;
     outline-style: none;
 }
 .description-container .edit:hover {
-    background-color: #028;
+    background-color: #999;
 }
 .description-container .delete {
     background-color: #f88;

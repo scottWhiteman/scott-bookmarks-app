@@ -1,4 +1,4 @@
-#https://scottwhiteman.github.io/scott-bookmarks-app/
+# https://scottwhiteman.github.io/scott-bookmarks-app/
 Title, URL, Description and rating can be added as a new bookmark.
 
 On load, the bookmarks start in compact view, showing only name and rating.  They can be clicked to view description and link, as well as an edit and delete button.
